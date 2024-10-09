@@ -10,26 +10,32 @@
     </head>
     <body>
         <main>
+            <input type="checkbox" id="switch" class="checkbox">
             <div class="page-title">
                 <h1 class="title-header">Service Robotics Blog</h1>
                 <hr>
                 <h2 class="title-signature">By SamthinkGit</h2>
             </div>
+
             <div class="page-center-flex">
                 <nav class="page-navigation">
-                    <a class="item-container" href="pages/practice-1.html">
-                        <p>High End Vacuum Cleaner</p>
-                        <img class="item-image"
-                            src="media/practice-1-header.png">
-                    </a>
-                    <a class="item-container" href="pages/undefined.html">
+                    <label for="switch" class="md-loader item-container" id="md-practice-1">
+                            <p>High End Vacuum Cleaner</p>
+                            <img class="item-image" src="media/practice-1-header.png">
+                    </label>
+                    <label for="switch" class="md-loader item-container" id="md-undefined">
                         <p>Not defined yet</p>
                         <img class="item-image" src="media/undefined-1.png">
-                    </a>
-                    <a class="item-container" href="pages/undefined.html">
+                    </label>
+                    <label for="switch" class="md-loader item-container" id="md-undefined">
                         <p>Not defined yet</p>
                         <img class="item-image" src="media/undefined-2.png">
-                    </a>
+                    </label>
+                    <label for="switch" class="dashboard-label">
+                        <img class="dashboard-arrow" src="media/arrow.png" alt="Dashboard">
+                    </label>
+                    <div id="md-container">
+                    </div>
                 </nav>
             </div>
         </main>
@@ -41,4 +47,6 @@
         </footer>
         <img class="page-background" src="/media/background.jpg">
     </body>
+    <script type="module" src="scripts/markdown.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
 </html>

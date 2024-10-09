@@ -27,12 +27,13 @@ body {
 }
 
 .page-center-flex {
+    margin-top: 25vh;
     display: flex;
     flex-direction: column;
-    height: 100vh;
     width: 100vw;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10vh;
 }
 
 .page-title {
@@ -122,6 +123,7 @@ body {
     text-align: center;
     text-shadow: 0 0 5px var(--led-blue);
     transition: var(--transition-time) ease;
+    cursor: pointer;
 }
 
 .item-container:hover {
@@ -144,6 +146,72 @@ body {
     }
 }
 
+/* ------ Content Displayer ------ */
+.dashboard-label {
+
+    position: relative;
+    background-color: transparent;
+    height: 30px;
+
+    border: 0;
+    transition: 0.5s;
+
+    text-align: center;
+    align-content: center;
+}
+
+.dashboard-label img {
+    position: relative;
+    height: 100%;
+}
+
+.dashboard-label:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: #ffffff10;
+}
+
+.dashboard-label:active {
+    /* background-color:  #8236ca90; */
+    border: 1px solid rgb(98, 75, 201);
+    transition: 0.1s;
+}
+
+.dashboard-arrow {
+    filter: invert(1);
+    transform: rotate(-90deg);
+}
+
+.checkbox:not(:checked) ~ .page-center-flex > .page-navigation >.dashboard-label{
+    opacity: 0;
+    height: 0;
+}
+
+.checkbox {
+    display: none;
+}
+
+#md-container {
+    height: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.checkbox:checked ~ .page-center-flex > .page-navigation > .item-container{
+    height: 0;
+    border: 0;
+    opacity: 0;
+}
+
+.checkbox:checked ~ .page-center-flex > .page-navigation > #md-container{
+    height: 100%;
+}
+
+.item-content {
+    height: 200px;
+    width: 100%;
+
+}
 /* ------- FOOTER -------- */
 footer a {
     position: fixed;
