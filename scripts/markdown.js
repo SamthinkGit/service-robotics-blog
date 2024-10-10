@@ -17,6 +17,9 @@ function loadMarkdown(path) {
         }
     );
 }
+window.onload = function() {
+    document.getElementById('switch').checked = false;
+};
 
 for (const page of pages) {
     page.addEventListener("click", () => loadMarkdown(`content/${page.id.slice(3)}.md`))

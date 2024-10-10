@@ -29,7 +29,7 @@ To solve this matrix, we need to find values for:
 
 ### 1.1 Finding tx and ty
 
-First, we determine the conversion of three points by moving the robot and recording both the robot's coordinates and the corresponding map coordinates. By doing this, we can accurately determine how the robot's coordinate system aligns with the map's coordinate system, which is essential for precise navigation.
+First, we determine the conversion of **three points** by moving the robot and recording both the robot's coordinates and the corresponding map coordinates. By doing this, we can accurately determine how the robot's coordinate system aligns with the map's coordinate system, which is essential for precise navigation.
 
 | Position                | Robot Coordinates (Pose3D)      | Map Coordinates |
 | ----------------------- | ------------------------------- | --------------- |
@@ -51,7 +51,7 @@ Using the tx and ty extracted from this approximation, and adjusting these value
 
 ### 1.2 Finding alpha
 
-We determine the angle between the horizontal axis by moving the robot along a horizontal line. Given that alpha is **180º**, we can easily deduce this value by observing how coordinate points reverse when plotted. This step allows us to align the robot's orientation with the map's reference frame, which is necessary for accurate movement and cleaning operations.
+We determine the angle between the horizontal axis by **moving the robot along a horizontal line**. Given that alpha is **180º**, we can easily deduce this value by observing how coordinate points reverse when plotted. This step allows us to align the robot's orientation with the map's reference frame, which is necessary for accurate movement and cleaning operations.
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/d839a4e8-30a4-4ccd-bef1-872bfbc8082c" height="400px" alt="point-relation">
@@ -78,7 +78,7 @@ Finally, we use the obtained values to translate coordinates, allowing the robot
 
 ### How It Has Been Designed
 
-The `Grid` class is used to generate a grid over the map image. The key strength lies in the **`Cell`** dataclass, which holds information about itself and adjacent cells. This allows us to gather environment information by simply looking at the current cell. Each cell in the grid provides context not only about its own state but also about the surrounding cells, which is crucial for effective navigation and decision-making.
+The `Grid` class is used to generate a grid over the map image. **The key strength lies in the **`Cell`** dataclass**, which holds information about itself and adjacent cells. This allows us to gather environment information by simply looking at the current cell. Each cell in the grid provides context not only about its own state but also about the **surrounding cells**, which is crucial for effective navigation and decision-making.
 
 The grid's main responsibility is to analyze the obtained map and provide functions to determine the current cell of the robot or to extract cells sequentially. This allows the robot to systematically cover the entire area, ensuring that no spots are missed during the cleaning process.
 
@@ -109,11 +109,11 @@ class Cell:
 
 - Each cell contains a **15x15** region of the map in its `content` property, determined through trial and error to provide an optimal balance between resolution and coverage.
 
-- A cell is defined as occupied if it contains at least one black pixel, which represents obstacles or walls that the robot must avoid.
+- A cell is defined as occupied if it contains **at least one black pixel**, which represents obstacles or walls that the robot must avoid.
 
 - **Cell status is determined by color**: black or red indicates occupied, white means clean, etc. This color-coding helps the robot quickly determine the status of each cell and decide its next action.
 
-- The `Grid.dilate_walls()` function was added to create a "danger zone" near walls, making those cells occupied and preventing the robot from crashing into walls. This additional buffer zone helps account for potential inaccuracies in positioning and ensures safer navigation.
+- The `Grid.dilate_walls()` function was added to create a **"danger zone"** near walls, making those cells occupied and preventing the robot from crashing into walls. This additional buffer zone helps account for potential inaccuracies in positioning and ensures safer navigation.
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/e97b19dd-986d-44cc-a4c8-fd53ac12948d" height="200px" alt="Map without/with dilatation">
@@ -196,7 +196,7 @@ With stable navigation and localization algorithms, building a **BSA** (Backtrac
 
 ### 4.1 Planification
 
-BSA works by selecting adjacent cells using a priority system, marking them as cleaned, and re-planning when blocked. This method ensures that the robot systematically covers all areas, only deviating when it encounters an obstacle that requires re-planning.
+BSA works by **selecting adjacent cells using a priority system**, marking them as cleaned, and re-planning when blocked. This method ensures that the robot systematically covers all areas, only deviating when it encounters an obstacle that requires re-planning.
 
 ```python
 while True:
@@ -224,7 +224,7 @@ while True:
 
 ### 🧩 Putting It All Together
 
-With all components ready, the main loop runs BSA until blocked, then re-plans and executes the path, ensuring the robot stays on the path. If needed, the robot starts a recovery by restarting the planification. This ensures that the robot can handle unexpected situations, such as obstacles that were not initially detected, and continue cleaning effectively.
+With all components ready, **the main loop runs BSA until blocked, then re-plans and executes the path**, ensuring the robot stays on the path. If needed, the robot starts a recovery by restarting the planification. This ensures that the robot can handle unexpected situations, such as obstacles that were not initially detected, and continue cleaning effectively.
 
 ```python
 # Pseudocode of bsa
