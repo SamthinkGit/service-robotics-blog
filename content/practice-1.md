@@ -17,28 +17,9 @@ Using the function `GUI.getMap()`, we obtain a **1025x1024** image of the house,
 
 This conversion is achieved through a transformation matrix similar to the following:
 
-$$
-\begin{bmatrix}
-  x_{map} \\
-  y_{map} \\
-  z_{map} \\
-  1
-\end{bmatrix}
-=
-\begin{bmatrix}
-  cos(\alpha) & -sin(\alpha) & 0 & tx \\
-  sin(\alpha) & cos(\alpha) & 0 & ty \\
-  0 & 0 & 1 & tz \\
-  0 & 0 & 0 & 1
-\end{bmatrix}
-\bullet
-\begin{bmatrix}
-  x_{robot} \\
-  y_{robot} \\
-  z_{robot} \\
-  1
-\end{bmatrix}
-$$
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/49145737-6acc-4fe3-848d-6ce316d3017e" height="400px" alt="point-relation">
+</div>
 
 To solve this matrix, we need to find values for:
 
