@@ -73,8 +73,9 @@ Using the $tx$ and $ty$ extracted from this approximation, and adjusting these v
 We determine the angle between the horizontal axis by moving the robot along a horizontal line. Given that $\alpha$ is **180º**, we can easily deduce this value by observing how coordinate points reverse when plotted. This step allows us to align the robot's orientation with the map's reference frame, which is necessary for accurate movement and cleaning operations.
 
 <div align="center">
-    <img src="../media/p1/point-relation.png" height="400px" alt="point-relation">
+    <img src="https://github.com/user-attachments/assets/d839a4e8-30a4-4ccd-bef1-872bfbc8082c" height="400px" alt="point-relation">
 </div>
+
 
 ### 1.3 Finding the Scale
 
@@ -134,7 +135,7 @@ class Cell:
 - The `Grid.dilate_walls()` function was added to create a "danger zone" near walls, making those cells occupied and preventing the robot from crashing into walls. This additional buffer zone helps account for potential inaccuracies in positioning and ensures safer navigation.
 
 <div align="center">
-    <img src="../media/p1/dilated-walls.png" height="200px" alt="Map without/with dilatation">
+    <img src="https://github.com/user-attachments/assets/e97b19dd-986d-44cc-a4c8-fd53ac12948d" height="200px" alt="Map without/with dilatation">
 </div>
 
 ---
@@ -199,7 +200,7 @@ path = grid.compute_path(grid[20, 20], grid[1,1])
 ```
 
 <div align="center">
-    <img src="../media/p1/a-star-example.png" height="400px" alt="A star path example">
+    <img src="https://github.com/user-attachments/assets/e6e17490-c0c4-4256-9396-377ac2dfdc3b" height="400px" alt="A star path example">
 </div>
 
 > The `simplify_route()` function allows using short-distance navigation between path vertices, preventing stops at each traveled cell. This optimization reduces the overall travel time and makes the navigation smoother.
@@ -237,7 +238,7 @@ while True:
 ```
 
 <div align="center">
-    <img src="../media/p1/bsa-route.png" height="300px" alt="BSA route path">
+    <img src="https://github.com/user-attachments/assets/e11aefd2-b969-47f9-bf10-b2d28cedfe71" height="300px" alt="BSA route path">
 </div>
 
 ### 🧩 Putting It All Together
