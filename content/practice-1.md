@@ -42,11 +42,11 @@ $$
 
 To solve this matrix, we need to find values for:
 
-- **$tx$, $ty$, $tz$**: Translations along the x, y, and z axes.
-- **$\alpha$**: Rotation.
+- **tx, ty, tz**: Translations along the x, y, and z axes.
+- **alpha**: Rotation.
 - **Scale**: Scaling factor.
 
-### 1.1 Finding $tx$ and $ty$
+### 1.1 Finding tx and ty
 
 First, we determine the conversion of three points by moving the robot and recording both the robot's coordinates and the corresponding map coordinates. By doing this, we can accurately determine how the robot's coordinate system aligns with the map's coordinate system, which is essential for precise navigation.
 
@@ -64,13 +64,13 @@ points_B = np.array([[996, 48], [996, 850], [670, 570]], dtype=np.float32)
 M = cv2.getAffineTransform(points_A, points_B)
 ```
 
-Using the $tx$ and $ty$ extracted from this approximation, and adjusting these values to minimize the error, we determine the position freedom degree of the robot. This process is crucial to ensure the robot can navigate effectively without deviating from its intended path.
+Using the tx and ty extracted from this approximation, and adjusting these values to minimize the error, we determine the position freedom degree of the robot. This process is crucial to ensure the robot can navigate effectively without deviating from its intended path.
 
-> Since $tz$ is constant for all map positions, it can be ignored. From now on, we use a **3x4** matrix because we only need to represent transformations in the x and y axes, while the z-axis remains fixed. 
+> Since tz is constant for all map positions, it can be ignored. From now on, we use a **3x4** matrix because we only need to represent transformations in the x and y axes, while the z-axis remains fixed. 
 
-### 1.2 Finding $\alpha$
+### 1.2 Finding alpha
 
-We determine the angle between the horizontal axis by moving the robot along a horizontal line. Given that $\alpha$ is **180º**, we can easily deduce this value by observing how coordinate points reverse when plotted. This step allows us to align the robot's orientation with the map's reference frame, which is necessary for accurate movement and cleaning operations.
+We determine the angle between the horizontal axis by moving the robot along a horizontal line. Given that alpha is **180º**, we can easily deduce this value by observing how coordinate points reverse when plotted. This step allows us to align the robot's orientation with the map's reference frame, which is necessary for accurate movement and cleaning operations.
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/d839a4e8-30a4-4ccd-bef1-872bfbc8082c" height="400px" alt="point-relation">

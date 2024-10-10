@@ -187,6 +187,10 @@ body {
     height: 0;
 }
 
+.checkbox:checked ~ .page-center-flex > .page-navigation{
+    background-color: rgba(35, 36, 51, 0.856);
+}
+
 .checkbox {
     display: none;
 }
@@ -205,6 +209,7 @@ body {
 
 .checkbox:checked ~ .page-center-flex > .page-navigation > #md-container{
     height: 100%;
+    padding: 25px;
 }
 
 .item-content {
