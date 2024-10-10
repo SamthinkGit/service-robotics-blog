@@ -255,4 +255,8 @@ while True:
 
 ---
 
-🎥 **[Video]**
+<div align="center">
+    <video width="600" controls>
+        <source src="https://samthinkgit.github.io/mobile-robotics-blog/images/p1.mp4" type="video/mp4">
+    </video>
+</div>
