@@ -52,7 +52,7 @@ For debugging and emulation purposes, we defined a **GUI** with relevant informa
 
 <div align="center">
     <video width="600" controls>
-        <source src="https://samthinkgit.github.io/mobile-robotics-blog/images/p1.mp4" type="video/mp4">
+        <source src="https://github.com/user-attachments/assets/41eea646-7be9-48d1-8203-5cf4009731c5" type="video/mp4">
     </video>
 </div>
 
