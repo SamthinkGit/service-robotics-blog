@@ -1,4 +1,4 @@
-**Title: Robust Autonomous Parallel Parking System**
+# Robust Autonomous Parallel Parking System
 
 In this project, autonomous car must perform parallel parking on the right-hand side of a typical street. The car's dynamic is similar to that of a real vehicle, with rear-wheel drive and Ackermann steering through two front wheels. It uses V and W commands to control speed and steering angle, respectively, while relying on three laser sensors for distance measurements: one in front, one on the right, and one on the rear. Importantly, GPS data is unavailable, except for the yaw value that functions similarly to a compass. The main objective was to create robust software that allows the car to successfully park, even in varied scenarios.
 
