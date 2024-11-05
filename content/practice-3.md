@@ -6,17 +6,30 @@ Here, It is explained an approach to accomplish this task:
 
 ### 1. Navigation Strategy
 
-Since we cannot rely on detecting the nearby cars or walls directly, the global navigation strategy must set a clear direction along which the vehicle moves. To achieve robustness, I made sure that all movements were **relative to the direction of the street** and avoided using global coordinates—purely relying on relative turns. This street direction was defined by a constant, `INITIAL_YAW`, which allowed the vehicle to drive along a set path. 
+To navigate in the correct direction, we first need to detect the street’s orientation. To achieve this, we'll move the car forward while comparing two points on the car's lateral laser sensor. By calculating the **slope** of the values detected at these two points, we can determine a value that indicates the street’s inclination relative to the car. As the car moves, we monitor this slope and record the car’s yaw as `initial_yaw` once the slope reaches zero, which **signifies alignment with the street direction**.
+
+<div align="center">
+    <img src="./media/p3/pending.png" height=200px>
+</div>
+
+To achieve robustness, we made sure that all movements were **relative to the direction of the street** and avoided using global coordinates—purely relying on relative turns.
 
 <div align="center">
     <img src="./media/p3/yaw-direction.png" height=200px>
 </div>
 
-The vehicle moved at a **reasonable speed** while using the right laser sensor to **scan for an available parking spot**, ensuring it was large enough for the car plus a small extra margin.
+Additionally, the vehicle moved at a **reasonable speed** while using the right laser sensor to **scan for an available parking spot**, ensuring it was large enough for the car plus a small extra margin.
 
-### 2. Parking Procedure
+### 2. Detecting an Spot
+For detecting an available spot for parking we translated all laser into vector values. Then, we determine if all vectors are outside of a box-sized umbral. If so, then there is an available space.
 
-For parking, I implemented a typical parallel parking maneuver. The steps were as follows:
+<div align="center">
+    <img src="./media/p3/vectors.png" height=200px>
+</div>
+
+### 3. Parking Procedure
+
+For parking, it has been implemented a typical parallel parking maneuver. The steps were as follows:
 
 - **Advance Past the Spot**: Once the desired parking space was identified, the car moved slightly forward until the space was aligned parallel behind the vehicle.
 
