@@ -43,6 +43,13 @@ For parking, it has been implemented a typical parallel parking maneuver. The st
     <img src="./media/p3/parking.png" height=200px>
 </div>
 
+
 ### Final Results
 
 This approach proved successful, allowing the car to park effectively in both the standard scenario and in more complex variations where other vehicles needed to be avoided. The implementation of relative-only navigation helped the system adapt to different street orientations without the need for global coordinates, while the detailed parking maneuver ensured precise placement regardless of the surroundings.
+
+<div align="center">
+    <video width="600" controls>
+        <source src="https://github.com/user-attachments/assets/21470418-0e02-4b4b-8134-a17881977b01" type="video/mp4">
+    </video>
+</div>
