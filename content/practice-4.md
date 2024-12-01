@@ -61,6 +61,6 @@ The **GUI** allows for real-time visualization, giving insight into how the robo
 
 <div align="center">
     <video width="600" controls>
-        <source src="https://github.com/user-attachments/assets/21470418-0e02-4b4b-8134-a17881977b01" type="video/mp4">
+        <source src="https://github.com/user-attachments/assets/2ecc8b7f-bf99-46c3-9f17-ed443cfb675d" type="video/mp4">
     </video>
 </div>
