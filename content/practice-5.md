@@ -123,11 +123,10 @@ robot2camera = [
 
 ---
 
-
 ## Results
 
 <div align="center">
     <video width="600" controls>
-        <source src="https://github.com/user-attachments/assets/21470418-0e02-4b4b-8134-a17881977b01" type="video/mp4">
+        <source src="https://github.com/user-attachments/assets/22fae260-9fd8-4f21-977b-9c480ea22bfd" type="video/mp4">
     </video>
 </div>
